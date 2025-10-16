@@ -1,5 +1,34 @@
 public class RockPaperScissors {
-    public static boolean JoelOdessky(String y) {
-        return y;
+    public static String JoelOdessky(int playerChoice) {
+        System.out.println("The rock is 1");
+        System.out.println("The paper is 2");
+        System.out.println("The scissors are 3");
+        
+        int computerChoice = randon.nextInt(3);
+        // Case 1: Tie
+        if (computerChoice == playerChoice) {
+            return "It's a tie";
+        }
+        // Case 2: Player wins
+        if (computerChoice == 1 && playerChoice == 2) {
+            return "It's a win!";
+        }
+        if (computerChoice == 2 && playerChoice == 3) {
+            return "It's a win!";
+        }
+        if (computerChoice == 3 && playerChoice == 1) {
+            return "It's a win!";
+        }
+
+        // Case 3: Player loses
+        if (computerChoice == 3 && playerChoice == 2) {
+            return "You lose";
+        }
+        if (computerChoice == 2 && playerChoice == 1) {
+            return "You lose";
+        }
+        if (computerChoice == 1 && playerChoice == 3) {
+            return "You lose";
+        }
     }
 }
