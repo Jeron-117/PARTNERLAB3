@@ -45,7 +45,6 @@ public class RandomEvent {
             System.out.println("Leaving so soon... ");
         }
 
-        sc.close();
+        in.close();
    }
-
 }

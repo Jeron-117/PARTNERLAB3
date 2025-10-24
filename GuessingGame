@@ -3,30 +3,26 @@ public class GuessingGame {
         String response;
 
         do {
-            int randomNumber = (int)(Math.random() * 3);
-            int playerAttempts = 0;
-
-
-            System.out.println("Enter a number between 0 and 3");
+            int randomNumber = (int)(Math.random() * 67);
+            System.out.println("Enter a number between 0 and 67");
             int guess = Integer.parseInt(in.nextLine());
 
             for (int i = 0; i < 4; i++) {
-                    playerAttempts = 4 - i;
-                    System.out.println("You have " + playerAttempts + " tries remaining.");
-        
+                if (guess == randomNumber) {
+                    i = 67;
+                    System.out.println("HOLY MACKEREL! You're dead on it!");
+                } else if (guess != randomNumber) {
+                    System.out.println("You have " + (4 - i) + " tries remaining.");
+
                     if (guess > randomNumber) {
-                        System.out.println("Nawr. Trohy lohwa!");
-                        guess = Integer.parseInt(in.nextLine());
-                    } 
-
+                    System.out.println("No. Try lower!");
+                    guess = Integer.parseInt(in.nextLine());
+                    }
                     if (guess < randomNumber) {
-                        System.out.println("Nawr. Trohy huyha!");
+                        System.out.println("No. Try higher!");
                         guess = Integer.parseInt(in.nextLine());
                     }
-
-                    if (guess == randomNumber) {
-                        System.out.println("HOLY MACKEREL! Yahwr ded owrn!");
-                    }
+                }
             }
 
             System.out.println("Do you wish to play again?");
@@ -40,14 +36,11 @@ public class GuessingGame {
             String returnOrExit = in.nextLine();
             
             if (returnOrExit.equalsIgnoreCase("return")) {
-                in.close();
-                return "Welcome back!"
+                return;
             }
             else if (returnOrExit.equalsIgnoreCase("exit")) {
                 System.out.println("Sayonara sucka!");
             }
         }
-
-        in.close();
     }
 }
