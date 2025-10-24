@@ -1,5 +1,53 @@
 public class GuessingGame {
-    public static boolean JeronMontecillo(String x) {
-        return x;
+    public static String JeronMontecillo(String returnOrExit) {
+        String response;
+
+        do {
+            int randomNumber = (int)(Math.random() * 3);
+            int playerAttempts = 0;
+
+
+            System.out.println("Enter a number between 0 and 3");
+            int guess = Integer.parseInt(in.nextLine());
+
+            for (int i = 0; i < 4; i++) {
+                    playerAttempts = 4 - i;
+                    System.out.println("You have " + playerAttempts + " tries remaining.");
+        
+                    if (guess > randomNumber) {
+                        System.out.println("Nawr. Trohy lohwa!");
+                        guess = Integer.parseInt(in.nextLine());
+                    } 
+
+                    if (guess < randomNumber) {
+                        System.out.println("Nawr. Trohy huyha!");
+                        guess = Integer.parseInt(in.nextLine());
+                    }
+
+                    if (guess == randomNumber) {
+                        System.out.println("HOLY MACKEREL! Yahwr ded owrn!");
+                    }
+            }
+
+            System.out.println("Do you wish to play again?");
+            response = in.nextLine();
+        }
+        while (response.equalsIgnoreCase("yes"));
+
+        if (!response.equalsIgnoreCase("yes")) {
+            System.out.println("RETURN TO MAIN MENU");
+            System.out.println("EXIT RANDOM NUMBER GAMES");
+            String returnOrExit = in.nextLine();
+            
+            if (returnOrExit.equalsIgnoreCase("return")) {
+                in.close();
+                return "Welcome back!"
+            }
+            else if (returnOrExit.equalsIgnoreCase("exit")) {
+                System.out.println("Sayonara sucka!");
+            }
+        }
+
+        in.close();
     }
 }

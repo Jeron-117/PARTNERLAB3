@@ -4,7 +4,7 @@ public class RockPaperScissors {
         System.out.println("The paper is 2");
         System.out.println("The scissors are 3");
         
-        int computerChoice = randon.nextInt(3);
+        int computerChoice = random.nextInt(3);
         // Case 1: Tie
         if (computerChoice == playerChoice) {
             return "It's a tie";
@@ -30,5 +30,7 @@ public class RockPaperScissors {
         if (computerChoice == 1 && playerChoice == 3) {
             return "You lose";
         }
+
+        return;
     }
 }
